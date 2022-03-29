@@ -4,11 +4,9 @@
  */
 package ui.menu;
 
-import com.softku.juegopreguntassofkau.Categoria;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Usuario;
 import static com.softku.juegopreguntassofkau.Usuario.salir;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -41,48 +39,11 @@ public class UIMenu {
         return usuarioEmpiezaJuegoO_Sale;
     }
 
-    //   public static boolean usuarioIniciaOsaleDelJuego(int empezarJuegoSalir) {
-//        boolean iniciarJuegoContinuar = false;
-//        //empezarJuegoSalir = verMenuInicial();
-//        switch (empezarJuegoSalir) {
-//            case 1 -> {
-//                iniciarJuegoContinuar = true;
-//                //Usuario usuarioEnJuego = crearUsuario();
-//                System.out.println("Estamos listos "); //+ usuarioEnJuego.getNombreUsuario()
-//                System.out.println("\n¿Eres capaz de responder las 5 preguntas sin equivocarte?."
-//                        + "\nRecuerda que si te retiras quedas con los puntos que hayas ganado.\n"
-//                        + "Si respondes y pierdes en cualquier ronda pierdes todos los puntos.\n"
-//                        + "Ganas si respondes todas las preguntas de forma correcta.");
-//            }
-//            case 2 -> {
-//                iniciarJuegoContinuar = false;
-//                System.out.println("Hasta la proxima ocasion");
-//                System.exit(0);
-//            }
-//            default ->
-//                System.out.println("Selecciona una opcion valida");
-//        }
-//        return iniciarJuegoContinuar;
-//    }
-//}
-//Método para ingresar un nombre de usuario de al menos 7 letras
-//    public static Usuario crearUsuario() {
-//        Usuario usuario = new Usuario();
-//        usuario.validarNombreUsuario(usuario);
-//        return usuario;
-//        System.out.println("Estamos listos " + usuario.getNombreUsuario()
-//                + "\n¿Eres capaz de responder las 5 preguntas sin equivocarte?."
-//                + "\nRecuerda que si te retiras quedas con los puntos que hayas ganado.\n"
-//                + "Si respondes y pierdes en cualquier ronda pierdes todos los puntos.\n"
-//                + "Ganas si respondes todas las preguntas de forma correcta.");
-//'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-//}
     public static void continuarJugando_O_retirarse_puntos(Pregunta preguntaPorCategoriaAleatoria, Usuario usuario) {
         System.out.println("Digite la letra de la respuesta que considera correcta (A, B, C, D)");
         System.out.println("Digite otra letra si desea retirarse");
         Scanner sc = new Scanner(System.in);
         char respuestaUsuario = Character.toUpperCase(sc.nextLine().charAt(0));
-        //boolean respuestaCorrecta = false;
         int i = 0;
         int j = 10;
         switch (respuestaUsuario) {
@@ -99,7 +60,6 @@ public class UIMenu {
                             usuario.setGanaPuntos(false);
                             usuario.setPuntos(0);
                             System.out.println("No haz acertado, debes estudiar mas");
-                            //System.out.println("Llegaste hasta la ronda " + (i + 1));
                             i = preguntaPorCategoriaAleatoria.getRespuestasPorCadaPregunta().size();
                         }
                     } else {
@@ -111,16 +71,9 @@ public class UIMenu {
                 System.out.println("\nDecidiste no jugar\nEstudia y vuelve en otra ocasion");
                 System.out.println("El usuario se retiro del juego\n");
                 usuario.setGanaPuntos(false);
-                //System.exit(0);
                 salir(usuario);
             }
         }
     }
-
-//    public static void salir(int puntos) {
-//        System.out.println("Quedaste con " + puntos + " puntos");
-//        System.out.println("Fin del juego");
-//        System.exit(0);
-//    }
 }
 

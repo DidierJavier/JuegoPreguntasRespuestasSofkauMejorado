@@ -8,10 +8,8 @@ import com.softku.juegopreguntassofkau.Categoria;
 import static com.softku.juegopreguntassofkau.Categoria.obtenerCategoriaPreguntaYrespuestas;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Respuesta;
-import com.softku.juegopreguntassofkau.Usuario;
 import java.util.ArrayList;
 import ui.menu.UIMenu;
-//import static ui.menu.UIMenu.usuarioIniciaOsaleDelJuego;
 /**
  *
  * @author DIDIER JAVIER
@@ -393,11 +391,6 @@ public class EntradaJuego {
         categoria5.getPreguntasPorCategoria().add(pregunta4_ronda5);
         categoria5.getPreguntasPorCategoria().add(pregunta5_ronda5);
         
-        //UIMenu.verMenuInicial();
-
-        //Categoria.crearUsuario(UIMenu.verMenuInicial()); //Menú inicial donde se indica al usuario el funcionamiento del juego y si desea continuar o salir
-        //usuarioIniciaOsaleDelJuego(UIMenu.verMenuInicial());
-        
         //Se crea un ArrayList para guardar las categorias de las preguntas
         ArrayList<Categoria> categorias = new ArrayList();
         categorias.add(categoria1);
@@ -405,8 +398,6 @@ public class EntradaJuego {
         categorias.add(categoria3);
         categorias.add(categoria4);
         categorias.add(categoria5);
-        
-        //Usuario usuario = new Usuario();
         
         //Metodo para obtener la categoria, la pregunta y las opciones que tiene el usuario
         obtenerCategoriaPreguntaYrespuestas(categorias, UIMenu.verMenuInicial());
