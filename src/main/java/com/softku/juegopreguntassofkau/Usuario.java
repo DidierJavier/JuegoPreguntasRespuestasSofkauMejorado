@@ -150,17 +150,18 @@ public class Usuario {
         do {
             System.out.println("-------------------");
             System.out.println("Persistencia de datos para el juego");
-            System.out.println("1. Recibir el usuario");
-            System.out.println("2. Listar usuario");
-            System.out.println("3. Editar el usuario");
-            System.out.println("4. Eliminar el usuario");
+            //System.out.println("1. Recibir el usuario");
+            System.out.println("1. Enviar usuario a la BD");
+            System.out.println("2. Listar usuarios");
+            System.out.println("3. Editar usuario");
+            System.out.println("4. Eliminar usuario");
             System.out.println("5. Salir");
             //Leemos la opcion del usuario
             opcion = sc.nextInt();
             
             switch (opcion) {
                 case 1:
-                    UsuarioService.recibirUsuario();
+                    UsuarioService.recibirUsuario(usuario);
                     break;
                 case 2:
                     UsuarioService.listarUsuarios();

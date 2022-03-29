@@ -11,8 +11,8 @@ import com.softku.juegopreguntassofkau.Usuario;
  * @author DIDIER JAVIER
  */
 public class UsuarioService {
-    public static void recibirUsuario() {
-        
+    public static void recibirUsuario(Usuario usuario) {
+        UsuarioDAO.crearUsuarioDB(usuario);
     }
     
     public static void listarUsuarios() {
