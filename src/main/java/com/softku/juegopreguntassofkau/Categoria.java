@@ -7,7 +7,6 @@ package com.softku.juegopreguntassofkau;
 import static com.softku.juegopreguntassofkau.Usuario.salir;
 import java.util.ArrayList;
 import java.util.Random;
-import ui.menu.UIMenu;
 import static ui.menu.UIMenu.continuarJugando_O_retirarse_puntos;
 /**
  *
@@ -85,37 +84,19 @@ public class Categoria {
             usuario.validarNombreUsuario(usuario);
             usuario.iniciarJuegoContinuar(usuario, usuarioEmpiezaJuegoOSale);
             int i = 0;
-            //Categoria categoriaDeLista;
-            //for (i = 0; i < 5; i++) {
             do {
                 Categoria categoriaDeLista = categorias.get(i);
                 int idPreguntaAleatoria = Categoria.mostrarPreguntasAleatoriaPorCategoria();
                 System.out.println("Este es el id de categoría: " + categoriaDeLista.getIdCategoria());
-                //System.out.println(categoriaDeLista.getIdCategoria());
                 Pregunta guardarPregunta = categoriaDeLista.getPreguntasPorCategoria().get(idPreguntaAleatoria);
-                //System.out.println("guardarPregunta = " + guardarPregunta);
                 System.out.println("guardarPregunta = " + guardarPregunta);//Se muestran las opciones de 
-                //preguntas y respuestas de forma correcta******************************************************
-                 
                 continuarJugando_O_retirarse_puntos(guardarPregunta, usuario);
-//                if(usuario.ganaPuntos){
                 i ++;
-//                }else{
-//                    i = 5;
-//                }
             }while (i < 5 && usuario.ganaPuntos == true);
             salir(usuario);
         }else {
             System.out.println("Decidiste no jugar. Estudia y vuelve luego");
             System.out.println("Usuario no identificado = " + usuario.getNombreUsuario());
         }
-        
-
     }
-//    public static Usuario crearUsuario(int continuaOsale) {
-//        Usuario usuario = new Usuario();
-//        usuario.validarNombreUsuario(usuario);
-//        usuario.iniciarJuegoContinuar(usuario, continuaOsale);
-//        return usuario;
-//}
 }

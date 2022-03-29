@@ -48,13 +48,8 @@ public class Respuesta {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        //sb.append("Respuesta{");
-        //sb.append("idRespuesta=").append(idRespuesta);
         sb.append("").append(caracterABCD);
         sb.append(". ").append(respuesta);
-        
-        //sb.append(", acierto=").append(acierto);
-        //sb.append('}');
         return sb.toString();
     }
 

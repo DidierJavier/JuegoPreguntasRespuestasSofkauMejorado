@@ -120,14 +120,9 @@ public class Usuario {
     }
     
     public void iniciarJuegoContinuar (Usuario usuario, int usuarioIniciaJuegoOSale) {
-        //boolean iniciarJuegoContinuar = false;
-        //empezarJuegoSalir = verMenuInicial();
         switch (usuarioIniciaJuegoOSale) {
             case 1 -> {
-                //System.out.println("Ingresa tu nombre: ");
                 usuario.setInicioJuego(true);
-                //iniciarJuegoContinuar = true;
-                //Usuario usuarioEnJuego = crearUsuario();
                 System.out.println("Estamos listos " + usuario.getNombreUsuario()); //+ usuarioEnJuego.getNombreUsuario()
                 System.out.println("\n¿Eres capaz de responder las 5 preguntas sin equivocarte?."
                         + "\nRecuerda que si te retiras quedas con los puntos que hayas ganado.\n"
@@ -136,9 +131,7 @@ public class Usuario {
             }
             case 2 -> {
                 usuario.setInicioJuego(false);
-                //iniciarJuegoContinuar = false;
                 System.out.println("Hasta la proxima ocasion");
-                //System.exit(0);
                 salir(usuario);
             }
             default ->
@@ -151,6 +144,5 @@ public class Usuario {
         System.out.println("usuario puntos = " + usuario.puntos);
         System.out.println("usuario gano o perdio = " + usuario.ganaPuntos);
         System.out.println("Fin del juego");
-        //System.out.println("Usuario supero " + i + " rondas");
     }
 }
