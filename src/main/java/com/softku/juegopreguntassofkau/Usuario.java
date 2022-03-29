@@ -23,6 +23,11 @@ public class Usuario {
         this.idUsuario = ++Usuario.contadorUsuarios;
     }
 
+    public Usuario(String nombreUsuario, int puntos) {
+        this.nombreUsuario = nombreUsuario;
+        this.puntos = puntos;
+    }
+
     public Usuario(String nombreUsuario, int puntos, String fechaDeIngreso, boolean ganaPuntos, boolean inicioJuego) {
         this.nombreUsuario = nombreUsuario;
         this.puntos = puntos;

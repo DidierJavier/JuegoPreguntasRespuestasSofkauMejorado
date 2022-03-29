@@ -8,6 +8,8 @@ import com.softku.juegopreguntassofkau.Categoria;
 import static com.softku.juegopreguntassofkau.Categoria.obtenerCategoriaPreguntaYrespuestas;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Respuesta;
+import conexion.db.Conexion;
+import java.sql.Connection;
 import java.util.ArrayList;
 import ui.menu.UIMenu;
 /**
@@ -16,6 +18,13 @@ import ui.menu.UIMenu;
  */
 public class EntradaJuego {
     public static void main(String[] args) {
+        
+        Conexion conexion = new Conexion();
+        try {
+            Connection cnx = conexion.get_connection();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         //Se crean los objetos tipo Respuesta. Luego se crean los objetos tipo pregunta para agregarles las
         //los objetos Respuesta segun la pregunta y finalmente se crean los objetos tipo Categoria para añadirles
         //las preguntas segun la categoria
