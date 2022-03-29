@@ -16,7 +16,6 @@ public class Usuario {
     private int puntos;
     private String fechaDeIngreso;
     private static int contadorUsuarios;
-    //char opcionValida;
     boolean ganaPuntos;
     boolean inicioJuego;
 
