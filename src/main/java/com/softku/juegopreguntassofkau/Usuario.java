@@ -4,6 +4,7 @@
  */
 package com.softku.juegopreguntassofkau;
 
+import conexion.db.UsuarioService;
 import java.util.Scanner;
 
 /**
@@ -140,5 +141,40 @@ public class Usuario {
         System.out.println("usuario puntos = " + usuario.puntos);
         System.out.println("usuario gano o perdio = " + usuario.ganaPuntos);
         System.out.println("Fin del juego");
+        enlazarUsuarioA_conexion(usuario);
+    }
+    
+    public static void enlazarUsuarioA_conexion(Usuario usuario) {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        do {
+            System.out.println("-------------------");
+            System.out.println("Persistencia de datos para el juego");
+            System.out.println("1. Recibir el usuario");
+            System.out.println("2. Listar usuario");
+            System.out.println("3. Editar el usuario");
+            System.out.println("4. Eliminar el usuario");
+            System.out.println("5. Salir");
+            //Leemos la opcion del usuario
+            opcion = sc.nextInt();
+            
+            switch (opcion) {
+                case 1:
+                    UsuarioService.recibirUsuario();
+                    break;
+                case 2:
+                    UsuarioService.listarUsuarios();
+                    break;
+                case 3:
+                    UsuarioService.borrarUsuario();
+                    break;
+                case 4:
+                    UsuarioService.editarUsuario();
+                    break;
+                default:
+                    break;
+            }
+            
+        }while(opcion != 5);
     }
 }

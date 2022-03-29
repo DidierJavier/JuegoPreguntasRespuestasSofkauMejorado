@@ -10,20 +10,20 @@ import com.softku.juegopreguntassofkau.Usuario;
  *
  * @author DIDIER JAVIER
  */
-public class UsuarioDAO {
-    public static void recibirUsuarioDB(Usuario usuario) {
+public class UsuarioService {
+    public static void recibirUsuario() {
         
     }
     
-    public static void leerUsuarioDB() {
+    public static void listarUsuarios() {
         
     }
     
-    public static void borrarUsuarioDB(int id_usuario) {
+    public static void borrarUsuario() {
         
     }
     
-    public static void actualizarUsuarioDB(Usuario usuario) {
+    public static void editarUsuario() {
         
     }
 }
