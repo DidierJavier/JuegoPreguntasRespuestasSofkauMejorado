@@ -21,6 +21,8 @@ public class Usuario {
 
     public Usuario() {
         this.idUsuario = ++Usuario.contadorUsuarios;
+        this.ganaPuntos = false;     
+        this.inicioJuego = false;
     }
 
     public Usuario(String nombreUsuario, int puntos) {
@@ -28,12 +30,10 @@ public class Usuario {
         this.puntos = puntos;
     }
 
-    public Usuario(String nombreUsuario, int puntos, String fechaDeIngreso, boolean ganaPuntos, boolean inicioJuego) {
+    public Usuario(String nombreUsuario, int puntos, String fechaDeIngreso) {
         this.nombreUsuario = nombreUsuario;
         this.puntos = puntos;
         this.fechaDeIngreso = fechaDeIngreso;
-        this.ganaPuntos = ganaPuntos;     
-        this.inicioJuego = inicioJuego;
     }
 
     public boolean isInicioJuego() {

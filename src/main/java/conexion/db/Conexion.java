@@ -12,9 +12,9 @@ import java.sql.SQLException;
  *
  * @author DIDIER JAVIER
  */
-public class Conexion {
+public class Conexion {//Clase para establecer la conexion a la BD con MYSQL
     
-    public Connection get_connection() {
+    public Connection get_connection() {//Metodo para obtener la conexion a la BD
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/resultadoJuego_app", "root", "");
