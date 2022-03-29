@@ -7,6 +7,7 @@ package ui.menu;
 import com.softku.juegopreguntassofkau.Categoria;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Usuario;
+import static com.softku.juegopreguntassofkau.Usuario.salir;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -108,8 +109,10 @@ public class UIMenu {
             }
             default -> {
                 System.out.println("\nDecidiste no jugar\nEstudia y vuelve en otra ocasion");
+                System.out.println("El usuario se retiro del juego\n");
                 usuario.setGanaPuntos(false);
-                System.exit(0);
+                //System.exit(0);
+                salir(usuario);
             }
         }
     }

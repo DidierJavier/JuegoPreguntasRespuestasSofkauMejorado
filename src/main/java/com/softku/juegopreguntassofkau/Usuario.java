@@ -138,7 +138,8 @@ public class Usuario {
                 usuario.setInicioJuego(false);
                 //iniciarJuegoContinuar = false;
                 System.out.println("Hasta la proxima ocasion");
-                System.exit(0);
+                //System.exit(0);
+                salir(usuario);
             }
             default ->
                 System.out.println("Selecciona una opcion valida");
