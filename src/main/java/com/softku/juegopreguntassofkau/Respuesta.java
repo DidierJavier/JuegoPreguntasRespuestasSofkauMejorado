@@ -4,8 +4,6 @@
  */
 package com.softku.juegopreguntassofkau;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author DIDIER JAVIER

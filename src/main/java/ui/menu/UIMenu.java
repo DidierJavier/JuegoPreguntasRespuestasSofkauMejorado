@@ -24,7 +24,7 @@ public class UIMenu {
         System.out.println("Si continuas y pierdes, tambien pierdes todos los puntos\n");
         System.out.println("Selecciona una opcion valida");
         int usuarioEmpiezaJuegoO_Sale = 2;
-        do {
+        do {                            //El ciclo se repite hasta que el usuario seleccione la opcion 1 o la 2
             System.out.println("1. Empezar");
             System.out.println("2. Salir");
 
@@ -39,6 +39,7 @@ public class UIMenu {
         return usuarioEmpiezaJuegoO_Sale;
     }
 
+    //Metodo para validar si el usuario se quiere retirar al momento de leer una pregunta
     public static void continuarJugando_O_retirarse_puntos(Pregunta preguntaPorCategoriaAleatoria, Usuario usuario) {
         System.out.println("Digite la letra de la respuesta que considera correcta (A, B, C, D)");
         System.out.println("Digite otra letra si desea retirarse");
@@ -48,7 +49,9 @@ public class UIMenu {
         int j = 10;
         switch (respuestaUsuario) {
             case 'A', 'B', 'C', 'D' -> {
-                do {
+                do {    //Ciclo que se repite hasta encontrar el tamanio de las respuestas por cada pregunta
+                    //o hasta obtener un caracter valido ingresado por el usuario (A, B, C, D)
+                    //Si el caracter que ingreso el usuario corresponde a la respuesta verdadera, el usuario gana
                     if (respuestaUsuario == preguntaPorCategoriaAleatoria.getRespuestasPorCadaPregunta().get(i).getCaracterABCD()) {
                         if (preguntaPorCategoriaAleatoria.getRespuestasPorCadaPregunta().get(i).isAcierto()) {
                             System.out.println("Excelente, haz acertado la pregunta de la ronda ");
@@ -56,7 +59,7 @@ public class UIMenu {
                             usuario.setPuntos((int) Math.pow(j, 2) + usuario.getPuntos() * 20);
                             System.out.println("Ahora tienes: " + usuario.getPuntos() + " puntos");
                             i = preguntaPorCategoriaAleatoria.getRespuestasPorCadaPregunta().size();
-                        } else {
+                        } else {//De lo contrario el usuario pierde
                             usuario.setGanaPuntos(false);
                             usuario.setPuntos(0);
                             System.out.println("No haz acertado, debes estudiar mas");
@@ -71,7 +74,6 @@ public class UIMenu {
                 System.out.println("\nDecidiste no jugar\nEstudia y vuelve en otra ocasion");
                 System.out.println("El usuario se retiro del juego\n");
                 usuario.setGanaPuntos(false);
-                salir(usuario);
             }
         }
     }

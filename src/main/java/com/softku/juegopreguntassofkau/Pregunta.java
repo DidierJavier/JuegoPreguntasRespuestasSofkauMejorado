@@ -58,7 +58,7 @@ public class Pregunta {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\npregunta=").append(pregunta);
+        sb.append("\nPregunta: ").append(pregunta);
         sb.append("\n").append(respuestasPorCadaPregunta);
         return sb.toString();
     }

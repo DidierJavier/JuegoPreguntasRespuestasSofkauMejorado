@@ -16,7 +16,7 @@ public class Usuario {
     private int puntos;
     private String fechaDeIngreso;
     private static int contadorUsuarios;
-    char opcionValida;
+    //char opcionValida;
     boolean ganaPuntos;
     boolean inicioJuego;
 
@@ -24,15 +24,11 @@ public class Usuario {
         this.idUsuario = ++Usuario.contadorUsuarios;
     }
 
-    public Usuario(char opcionValida) {
-        this.opcionValida = opcionValida;
-    }
-    
     public Usuario(String nombreUsuario, int puntos, String fechaDeIngreso, boolean ganaPuntos, boolean inicioJuego) {
         this.nombreUsuario = nombreUsuario;
         this.puntos = puntos;
         this.fechaDeIngreso = fechaDeIngreso;
-        this.ganaPuntos = ganaPuntos;
+        this.ganaPuntos = ganaPuntos;     
         this.inicioJuego = inicioJuego;
     }
 
@@ -50,15 +46,6 @@ public class Usuario {
 
     public void setGanaPuntos(boolean ganaPuntos) {
         this.ganaPuntos = ganaPuntos;
-    }
-
-    
-    public void setOpcionValida(char opcionValida) {
-        this.opcionValida = opcionValida;
-    }
-
-    public char getOpcionValida() {
-        return opcionValida;
     }
 
     public int getIdUsuario() {
@@ -109,6 +96,7 @@ public class Usuario {
         return sb.toString();
     }
   
+    //Metodo que se repite hasta que el usuario ingrese un nombre de al menos 7 letras
     public void validarNombreUsuario(Usuario usuario) {
         int nombreLengthSinEspacios;
         do {
@@ -119,15 +107,19 @@ public class Usuario {
         } while (nombreLengthSinEspacios < 7);
     }
     
+    
+    //Metodo para validar si el usuario quiere jugar o si desea retirarse
     public void iniciarJuegoContinuar (Usuario usuario, int usuarioIniciaJuegoOSale) {
         switch (usuarioIniciaJuegoOSale) {
             case 1 -> {
                 usuario.setInicioJuego(true);
-                System.out.println("Estamos listos " + usuario.getNombreUsuario()); //+ usuarioEnJuego.getNombreUsuario()
-                System.out.println("\n¿Eres capaz de responder las 5 preguntas sin equivocarte?."
-                        + "\nRecuerda que si te retiras quedas con los puntos que hayas ganado.\n"
-                        + "Si respondes y pierdes en cualquier ronda pierdes todos los puntos.\n"
-                        + "Ganas si respondes todas las preguntas de forma correcta.");
+                System.out.println("\nEstamos listos " + usuario.getNombreUsuario()); //+ usuarioEnJuego.getNombreUsuario()
+                System.out.println("""
+                                   
+                                   \u00bfEres capaz de responder las 5 preguntas sin equivocarte?.
+                                   Recuerda que si te retiras quedas con los puntos que hayas ganado.
+                                   Si respondes y pierdes en cualquier ronda pierdes todos los puntos.
+                                   Ganas si respondes todas las preguntas de forma correcta.""");
             }
             case 2 -> {
                 usuario.setInicioJuego(false);

@@ -16,6 +16,10 @@ import ui.menu.UIMenu;
  */
 public class EntradaJuego {
     public static void main(String[] args) {
+        //Se crean los objetos tipo Respuesta. Luego se crean los objetos tipo pregunta para agregarles las
+        //los objetos Respuesta segun la pregunta y finalmente se crean los objetos tipo Categoria para añadirles
+        //las preguntas segun la categoria
+        
         //Ronda 1------------------------------------------------------------------------------------------------------
         //Creando Respuestas a la pregunta 1, ronda 1------------------------------------------------------------------
         Respuesta respuestaA_Pregunta1_Ronda1 = new Respuesta("El pollo", 'A', false);
@@ -400,6 +404,8 @@ public class EntradaJuego {
         categorias.add(categoria5);
         
         //Metodo para obtener la categoria, la pregunta y las opciones que tiene el usuario
+        //Este metodo recibe como parametros el ArrayList de categorias, el cual incluye todas las categorias
+        //y el metodo UIMenu.verMenuInicial, el cual devuelve un numero entero
         obtenerCategoriaPreguntaYrespuestas(categorias, UIMenu.verMenuInicial());
     }
 }
