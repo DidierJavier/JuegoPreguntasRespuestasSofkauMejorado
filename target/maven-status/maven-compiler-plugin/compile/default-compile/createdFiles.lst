@@ -1,3 +1,6 @@
+ui\menu\UIMenu.class
 com\softku\juegopreguntassofkau\Respuesta.class
+com\softku\juegopreguntassofkau\Categoria.class
+com\softku\juegopreguntassofkau\Usuario.class
 entrada\juego\EntradaJuego.class
 com\softku\juegopreguntassofkau\Pregunta.class

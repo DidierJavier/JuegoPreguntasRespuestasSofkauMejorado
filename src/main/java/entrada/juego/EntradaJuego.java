@@ -5,10 +5,13 @@
 package entrada.juego;
 
 import com.softku.juegopreguntassofkau.Categoria;
+import static com.softku.juegopreguntassofkau.Categoria.obtenerCategoriaPreguntaYrespuestas;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Respuesta;
+import com.softku.juegopreguntassofkau.Usuario;
+import java.util.ArrayList;
 import ui.menu.UIMenu;
-
+//import static ui.menu.UIMenu.usuarioIniciaOsaleDelJuego;
 /**
  *
  * @author DIDIER JAVIER
@@ -39,7 +42,7 @@ public class EntradaJuego {
         //Añadiendo Respuestas a la pregunta 2, ronda 1
         pregunta2_ronda1.getRespuestasPorCadaPregunta().add(respuestaA_Pregunta2_Ronda1);
         pregunta2_ronda1.getRespuestasPorCadaPregunta().add(respuestaB_Pregunta2_Ronda1);
-        pregunta2_ronda1.getRespuestasPorCadaPregunta().add(respuestaB_Pregunta2_Ronda1);
+        pregunta2_ronda1.getRespuestasPorCadaPregunta().add(respuestaC_Pregunta2_Ronda1);
         pregunta2_ronda1.getRespuestasPorCadaPregunta().add(respuestaD_Pregunta2_Ronda1);
 
         //Creando respuestas a la pregunta 3 ronda 1
@@ -389,12 +392,23 @@ public class EntradaJuego {
         categoria5.getPreguntasPorCategoria().add(pregunta3_ronda5);
         categoria5.getPreguntasPorCategoria().add(pregunta4_ronda5);
         categoria5.getPreguntasPorCategoria().add(pregunta5_ronda5);
-
-        UIMenu.verMenu();//Menú inicial donde se indica al usuario el funcionamiento del juego y si desea continuar o salir
         
+        //UIMenu.verMenuInicial();
 
-//        //Método donde se verifica la eleccion de la respuesta que ha dado el usuario (A, B, C o D)
-//        verificarEleccion(categorias);
-    
+        //Categoria.crearUsuario(UIMenu.verMenuInicial()); //Menú inicial donde se indica al usuario el funcionamiento del juego y si desea continuar o salir
+        //usuarioIniciaOsaleDelJuego(UIMenu.verMenuInicial());
+        
+        //Se crea un ArrayList para guardar las categorias de las preguntas
+        ArrayList<Categoria> categorias = new ArrayList();
+        categorias.add(categoria1);
+        categorias.add(categoria2);
+        categorias.add(categoria3);
+        categorias.add(categoria4);
+        categorias.add(categoria5);
+        
+        //Usuario usuario = new Usuario();
+        
+        //Metodo para obtener la categoria, la pregunta y las opciones que tiene el usuario
+        obtenerCategoriaPreguntaYrespuestas(categorias, UIMenu.verMenuInicial());
     }
 }
