@@ -9,7 +9,10 @@ import com.softku.juegopreguntassofkau.Usuario;
 import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,9 +42,28 @@ public class UsuarioDAO {
     }
     
     public static void leerUsuarioDB() {
+        Conexion db_connect = new Conexion();
         
+        try (Connection conexion = db_connect.get_connection()){
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            
+            String query = "SELECT * FROM juegopreguntasrespuestas";
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                System.out.println("ID: " + rs.getInt("idUsuario"));
+                System.out.println("Usuario: " + rs.getString("nombreUsuario"));
+                System.out.println("Puntos: " + rs.getInt("puntos"));
+                System.out.println("Fecha de registro: " + rs.getString("fechaRegistro"));
+                System.out.println("");
+            }
+    }   catch (SQLException ex) {
+            System.out.println("No fue posible recuperar los mensajes");
     }
-    
+        }
+        
     public static void borrarUsuarioDB(int id_usuario) {
         
     }

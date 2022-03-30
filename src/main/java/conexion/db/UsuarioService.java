@@ -16,7 +16,7 @@ public class UsuarioService {
     }
     
     public static void listarUsuarios() {
-        
+        UsuarioDAO.leerUsuarioDB();
     }
     
     public static void borrarUsuario() {
