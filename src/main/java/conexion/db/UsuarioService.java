@@ -28,6 +28,15 @@ public class UsuarioService {
     }
     
     public static void editarUsuario() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indica el nombre del usuario a actualizar");
+        String nombreModificado = sc.nextLine();
         
+        System.out.println("Indica el ID del usuario a editar");
+        int id_usuario = sc.nextInt();
+        Usuario usuarioActualizacion = new Usuario();
+        usuarioActualizacion.setIdUsuario(id_usuario);
+        usuarioActualizacion.setNombreUsuario(nombreModificado);
+        UsuarioDAO.actualizarUsuarioDB(usuarioActualizacion);
     }
 }

@@ -85,7 +85,26 @@ public class UsuarioDAO {
         }
     }
 
-    public static void actualizarUsuarioDB(Usuario usuario) {
+    public static void actualizarUsuarioDB(Usuario cambioUsuario) {
+        Conexion db_connect = new Conexion();
+
+        try (Connection conexion = db_connect.get_connection()) {
+            PreparedStatement ps = null;
+
+            try {
+                String query = "UPDATE juegopreguntasrespuestas SET nombreUsuario = ? WHERE idUsuario = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, cambioUsuario.getNombreUsuario());
+                ps.setInt(2, cambioUsuario.getIdUsuario());
+                ps.executeUpdate();
+                System.out.println("El mensaje se actualizo");
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                System.out.println("No fue posible actualizar el mensaje");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
 
     }
 }
