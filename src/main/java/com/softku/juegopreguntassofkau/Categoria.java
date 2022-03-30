@@ -8,7 +8,6 @@ import static com.softku.juegopreguntassofkau.Usuario.salir;
 import java.util.ArrayList;
 import java.util.Random;
 import ui.menu.UIMenu;
-import static ui.menu.UIMenu.continuarJugando_O_retirarse_puntos;
 /**
  *
  * @author DIDIER JAVIER
@@ -96,7 +95,9 @@ public class Categoria {
                 System.out.println("Este es el id de categoría: " + categoriaDeLista.getIdCategoria());
                 Pregunta guardarPregunta = categoriaDeLista.getPreguntasPorCategoria().get(idPreguntaAleatoria);//Se guarda
                 //la pregunta que se genero de forma aleatoria
+                System.out.println("------------------------------------------------------------------");
                 System.out.println(guardarPregunta);//Se muestra la pregunta y las opciones de respuesta
+                System.out.println("-------------------------------------------------------------------");
                 UIMenu.continuarJugando_O_retirarse_puntos(guardarPregunta, usuario);
                 i ++;
             }while (i < 5 && usuario.ganaPuntos == true);

@@ -4,10 +4,8 @@
  */
 package com.softku.juegopreguntassofkau;
 
-import conexion.db.UsuarioService;
 import java.util.Scanner;
 import ui.menu.UIMenu;
-import static ui.menu.UIMenu.enlazarUsuarioA_conexion;
 
 /**
  *
@@ -111,6 +109,7 @@ public class Usuario {
     public void validarNombreUsuario(Usuario usuario) {
         int nombreLengthSinEspacios;
         do {
+            System.out.println("------------------------------------------------------------");
             System.out.println("\nIngresa tu nombre (Como minimo debe contener 7 letras):\n");
             Scanner sc = new Scanner(System.in);
             usuario.setNombreUsuario(sc.nextLine());
@@ -124,13 +123,15 @@ public class Usuario {
         switch (usuarioIniciaJuegoOSale) {
             case 1 -> {
                 usuario.setInicioJuego(true);
-                System.out.println("\nEstamos listos " + usuario.getNombreUsuario()); //+ usuarioEnJuego.getNombreUsuario()
+                System.out.println("\nEstamos listos " + usuario.getNombreUsuario()); 
+                System.out.println("---------------------------------------------------------------");
                 System.out.println("""
                                    
                                    \u00bfEres capaz de responder las 5 preguntas sin equivocarte?.
                                    Recuerda que si te retiras quedas con los puntos que hayas ganado.
                                    Si respondes y pierdes en cualquier ronda pierdes todos los puntos.
                                    Ganas si respondes todas las preguntas de forma correcta.""");
+                System.out.println("-----------------------------------------------------------------");
             }
             case 2 -> {
                 usuario.setInicioJuego(false);
@@ -149,30 +150,4 @@ public class Usuario {
         System.out.println("Fin del juego");
         UIMenu.enlazarUsuarioA_conexion(usuario);
     }
-    
-//    public static void enlazarUsuarioA_conexion(Usuario usuario) {
-//        Scanner sc = new Scanner(System.in);
-//        int opcion = 0;
-//        do {
-//            System.out.println("-------------------------------------");
-//            System.out.println("Persistencia de datos para el juego");
-//            System.out.println("1. Enviar usuario a la BD");
-//            System.out.println("2. Listar usuarios");
-//            System.out.println("3. Eliminar usuario");
-//            System.out.println("4. Editar usuario");
-//            System.out.println("5. Salir");
-//            //Leemos la opcion del usuario
-//            opcion = sc.nextInt();
-//            
-//            switch (opcion) {
-//                case 1 -> UsuarioService.recibirUsuario(usuario);
-//                case 2 -> UsuarioService.listarUsuarios();
-//                case 3 -> UsuarioService.borrarUsuario();
-//                case 4 -> UsuarioService.editarUsuario();
-//                default -> {
-//                }
-//            }
-//            
-//        }while(opcion != 5);
-//    }
 }

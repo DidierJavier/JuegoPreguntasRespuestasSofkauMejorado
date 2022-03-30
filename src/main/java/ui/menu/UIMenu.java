@@ -6,7 +6,6 @@ package ui.menu;
 
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Usuario;
-import static com.softku.juegopreguntassofkau.Usuario.salir;
 import conexion.db.UsuarioService;
 import java.util.Scanner;
 
@@ -19,10 +18,12 @@ public class UIMenu {
     //private static Usuario usuario;
 //Menú inicial donde se explica el funcionamiento del juego y se da la opción de iniciarJuegoContinuar o salir
     public static int verMenuInicial() {
+        System.out.println("--------------------------------------------------------------------");
         System.out.println("Bienvenido al concurso de preguntas y respuestas");
         System.out.println("El juego consta de cinco rondas; una pregunta en cada ronda");
         System.out.println("Te puedes retirar cuando quieras y quedas con los puntos acumulados");
-        System.out.println("Si continuas y pierdes, tambien pierdes todos los puntos\n");
+        System.out.println("Si continuas y pierdes, tambien pierdes todos los puntos");
+        System.out.println("---------------------------------------------------------------------");
         System.out.println("Selecciona una opcion valida");
         int usuarioEmpiezaJuegoO_Sale = 2;
         do {                            //El ciclo se repite hasta que el usuario seleccione la opcion 1 o la 2

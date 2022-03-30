@@ -8,11 +8,7 @@ import com.softku.juegopreguntassofkau.Categoria;
 import static com.softku.juegopreguntassofkau.Categoria.obtenerCategoriaPreguntaYrespuestas;
 import com.softku.juegopreguntassofkau.Pregunta;
 import com.softku.juegopreguntassofkau.Respuesta;
-import conexion.db.Conexion;
-import conexion.db.UsuarioService;
-import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.Scanner;
 import ui.menu.UIMenu;
 /**
  *

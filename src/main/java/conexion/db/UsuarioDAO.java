@@ -4,15 +4,11 @@
  */
 package conexion.db;
 
-import com.mysql.cj.xdevapi.PreparableStatement;
 import com.softku.juegopreguntassofkau.Usuario;
-import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
