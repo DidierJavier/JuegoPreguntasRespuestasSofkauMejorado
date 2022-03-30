@@ -153,27 +153,19 @@ public class Usuario {
             //System.out.println("1. Recibir el usuario");
             System.out.println("1. Enviar usuario a la BD");
             System.out.println("2. Listar usuarios");
-            System.out.println("3. Editar usuario");
-            System.out.println("4. Eliminar usuario");
+            System.out.println("3. Eliminar usuario");
+            System.out.println("4. Editar usuario");
             System.out.println("5. Salir");
             //Leemos la opcion del usuario
             opcion = sc.nextInt();
             
             switch (opcion) {
-                case 1:
-                    UsuarioService.recibirUsuario(usuario);
-                    break;
-                case 2:
-                    UsuarioService.listarUsuarios();
-                    break;
-                case 3:
-                    UsuarioService.borrarUsuario();
-                    break;
-                case 4:
-                    UsuarioService.editarUsuario();
-                    break;
-                default:
-                    break;
+                case 1 -> UsuarioService.recibirUsuario(usuario);
+                case 2 -> UsuarioService.listarUsuarios();
+                case 3 -> UsuarioService.borrarUsuario();
+                case 4 -> UsuarioService.editarUsuario();
+                default -> {
+                }
             }
             
         }while(opcion != 5);

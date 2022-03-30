@@ -19,11 +19,11 @@ import java.util.logging.Logger;
  * @author DIDIER JAVIER
  */
 public class UsuarioDAO {
-    
+
     public static void crearUsuarioDB(Usuario usuario) {
         Conexion db_connect = new Conexion();
-        
-        try (Connection conexion = db_connect.get_connection()){
+
+        try (Connection conexion = db_connect.get_connection()) {
             PreparedStatement ps = null;
             try {
                 String query = "INSERT INTO juegopreguntasrespuestas(nombreUsuario, puntos) VALUES (?, ?)";
@@ -35,23 +35,23 @@ public class UsuarioDAO {
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
-            
+
         } catch (SQLException e) {
             System.out.println(e);
         }
     }
-    
+
     public static void leerUsuarioDB() {
         Conexion db_connect = new Conexion();
-        
-        try (Connection conexion = db_connect.get_connection()){
+
+        try (Connection conexion = db_connect.get_connection()) {
             PreparedStatement ps = null;
             ResultSet rs = null;
-            
+
             String query = "SELECT * FROM juegopreguntasrespuestas";
             ps = conexion.prepareStatement(query);
             rs = ps.executeQuery();
-            
+
             while (rs.next()) {
                 System.out.println("ID: " + rs.getInt("idUsuario"));
                 System.out.println("Usuario: " + rs.getString("nombreUsuario"));
@@ -59,16 +59,33 @@ public class UsuarioDAO {
                 System.out.println("Fecha de registro: " + rs.getString("fechaRegistro"));
                 System.out.println("");
             }
-    }   catch (SQLException ex) {
+        } catch (SQLException ex) {
             System.out.println("No fue posible recuperar los mensajes");
-    }
         }
-        
-    public static void borrarUsuarioDB(int id_usuario) {
-        
     }
-    
+
+    public static void borrarUsuarioDB(int id_usuario) {
+        Conexion db_connect = new Conexion();
+
+        try (Connection conexion = db_connect.get_connection()) {
+            PreparedStatement ps = null;
+
+            try {
+                String query = "DELETE FROM juegopreguntasrespuestas WHERE idUsuario = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, id_usuario);
+                ps.executeUpdate();
+                System.out.println("El usuario ha sido borrado");
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                System.out.println("No fue posible borrar el mensaje");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
     public static void actualizarUsuarioDB(Usuario usuario) {
-        
+
     }
 }

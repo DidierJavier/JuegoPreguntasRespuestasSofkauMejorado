@@ -5,6 +5,7 @@
 package conexion.db;
 
 import com.softku.juegopreguntassofkau.Usuario;
+import java.util.Scanner;
 
 /**
  *
@@ -20,7 +21,10 @@ public class UsuarioService {
     }
     
     public static void borrarUsuario() {
-        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indica el ID del usuario a borrar");
+        int id_usuario = sc.nextInt();
+        UsuarioDAO.borrarUsuarioDB(id_usuario);
     }
     
     public static void editarUsuario() {
