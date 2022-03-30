@@ -17,9 +17,12 @@ public class Conexion {//Clase para establecer la conexion a la BD con MYSQL
     public Connection get_connection() {//Metodo para obtener la conexion a la BD
         Connection connection = null;
         try {
+            //Se emplea la configuración por defecto que trae el paquete XAMPP. El usuario por defecto es <root> y no tiene 
+            //contraseña. Si se tiene un nombre distinto a la BD, donde dice <resultadoJuego_app>, se cambia por el nombre que se le haya
+            //dado a la BD
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/resultadoJuego_app", "root", "");
             if(connection != null) {
-                System.out.println("Conexion exitosa");
+                System.out.println("\nConexion exitosa\n");
             }
         } catch (SQLException e) {
             System.out.println(e);
